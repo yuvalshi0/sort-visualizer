@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Flask_Chat_App</title>
+  </head>
+  <body>
+    <h3 style="color: #ccc; font-size: 30px;">test here</h3>
+    <div class="message_holder"></div>
+    <button onclick="connect()">test</button>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script type="text/javascript">
+      var test = "http://" + document.domain + ":" + location.port + "/sort";
+      console.log(test);
+      var socket = io.connect(test);
+      var arr = [1, 3, 1, 2];
+      function connect() {
+        socket.emit("sort", {
+          data: {
+            arr: arr,
+            interval: 0.5,
+            algorithm: "Merge Sort",
+          },
+        });
+      }
+
+      socket.on("swap", function (msg) {
+        console.log(msg);
+        $("h3").remove();
+        $("div.message_holder").append(
+          '<div><b style="color: #000">' +
+            msg.swap[0] +
+            "," +
+            msg.swap[1] +
+            "</b></div> "
+        );
+      });
+      socket.on("final", function (msg) {
+        console.log(msg);
+        $("h3").remove();
+        $("div.message_holder").append(
+          '<div><b style="color: #000">' + msg + "</b></div> "
+        );
+      });
+    </script>
+  </body>
+</html>

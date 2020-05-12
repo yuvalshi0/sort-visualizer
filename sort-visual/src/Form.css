@@ -1,0 +1,56 @@
+.div {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.form-control {
+  width: 200px;
+  height: 40px;
+  margin-right: 10px;
+  display: flex;
+}
+
+.btn-primary {
+  height: 40px;
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 16px;
+}
+
+.graph {
+  height: 585px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.graph-items {
+  margin-right: 4px;
+  display: flex;
+  width: 10px;
+  background-color: blueviolet;
+}
+
+.graph-items-swap {
+  margin-right: 4px;
+  display: flex;
+  width: 10px;
+  background-color: darkorange;
+}
+
+.middle-graph {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

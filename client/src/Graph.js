@@ -49,7 +49,10 @@ class Graph extends React.Component {
         return response.json();
       })
       .then((data) => {
-        this.setState({ data: data.data });
+        this.setState({
+          data: data.data,
+          count: 0
+        });
       });
   }
 
@@ -61,7 +64,7 @@ class Graph extends React.Component {
         data: {
           arr: this.state.data,
           interval: 0.01,
-          algorithm: algorithm, //Need to change to - algorithm after server fix
+          algorithm: algorithm,
         },
       });
       this.setState({
@@ -80,7 +83,6 @@ class Graph extends React.Component {
         this.setState({
           data: data,
           swap: swap,
-          count: ++this.state.count,
         });
       }
     });
@@ -97,12 +99,16 @@ class Graph extends React.Component {
     let temp = arr[index1];
     arr[index1] = arr[index2];
     arr[index2] = temp;
+    this.setState({
+        count: this.state.count + 1
+    });
     return arr;
   }
 
   refresh() {
     this.setState({
       data: this.state.init_arr,
+      count: 0
     });
   }
 

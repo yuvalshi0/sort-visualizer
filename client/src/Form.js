@@ -11,6 +11,7 @@ class Form extends React.Component {
       BUBBLE: "Bubble sort",
       MERGE: "Merge Sort",
       QUICK: "Quick Sort",
+      INSERTION: "Insertion Sort"
     };
 
     this.state = {

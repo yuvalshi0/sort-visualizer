@@ -115,7 +115,7 @@ class Graph extends React.Component {
   render() {
     const swap = this.state.swap.slice();
     let button_class_name = "btn btn-primary";
-    let ongoing = this.state.swap.length == 0 && this.state.init_arr
+    let ongoing = this.state.swap.length === 0 && this.state.init_arr
 
     const bars = this.state.data.slice().map((value, index) => {
       let className = (swap.length > 0 && swap.includes(index)) ? "graph-items-swap" : "graph-items";

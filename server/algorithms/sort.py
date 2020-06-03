@@ -35,7 +35,9 @@ class Sort(Namespace):
         if algo_name in SUPPORTED_ALGORITHMS and algo_name == SUPPORTED_ALGORITHMS[1]:
             algo.merge_sort(arr, 0, len(arr) - 1)
         elif algo_name in SUPPORTED_ALGORITHMS and algo_name == SUPPORTED_ALGORITHMS[2]:
-            algo.quick_sort(arr, 0, len(arr)-1)
+            algo.quick_sort(arr, 0, len(arr) - 1)
+        elif algo_name in SUPPORTED_ALGORITHMS and algo_name == SUPPORTED_ALGORITHMS[3]:
+            algo.insertion_sort(arr)
         else:
             algo.bubblesort(arr)
 
